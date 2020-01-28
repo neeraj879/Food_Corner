@@ -1,0 +1,19 @@
+{% extends '../base.html' %}
+{%load staticfiles %}
+    {% block content %}
+    <div class="section-header" style="height: 50px;"></div>
+    <div style="position:absolute;left:-80px;top:0px;"><a href="/"><img src="{% static 'images/icons/icon.jpg' %}"></a></div>
+</div>
+<table>
+    <th>
+        <td>Name</td>
+        <td>Price</td>
+    </th>
+    {% for item in carts %}
+    <tr>
+        <td>{{item}}</td>
+        <td>{{item.total}}</td>
+    </tr> 
+    {% endfor %}
+</table>
+    {%endblock%}

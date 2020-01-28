@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html></body>
+<html lang="en">
+<head>
+<title>Register</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travello template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <div class="container">
+        <form action="login" class="form" method="POST">
+            {% csrf_token %}
+            
+            Username : <input type="text" name="username"><br><br>
+            Password : <input type="password" name="password"><br><br>
+            <input type="submit" name="submit" value="login">
+        </form>
+        <div>
+            {% for message in messages %}
+            <h5> {{message}}</h5>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

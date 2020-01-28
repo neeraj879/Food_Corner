@@ -1,0 +1,355 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="shortcut icon" href="images/star.png" type="favicon/ico" /> -->
+
+        <title>Food Corner</title>
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.css' %}">
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+        <link rel="stylesheet" href="{% static 'css/pricing.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link href="{% static 'css/signup.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+        <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.flexslider.min.js' %}"></script>
+        <script type="text/javascript">
+            $(window).load(function() {
+                $('.flexslider').flexslider({
+                 animation: "slide",
+                 controlsContainer: ".flexslider-container"
+                });
+            });
+        </script>
+
+    </head>
+    <body data-spy="scroll" data-target="#template-navbar">
+        <!--==   Pricing  ==-->
+        <section id="pricing" class="pricing">
+            <div id="w">
+                <div class="pricing-filter">
+                    <div class="pricing-filter-wrapper">
+                        <div style="position: absolute;right: 10px;height:60px;width:180px;">
+                            <ul>
+                                
+                                {% if user.is_authenticated %}
+                                <li style="display:inline-block;position: relative;top: 10px;right: 100;"> <a href="user/"><b>Logout</b></a></li>
+                                <li style="display:inline-block;position: relative;top: 10px;right: 100;"> <b> &nbsp;{{user.first_name}}</b></li>
+                                <li style="display:inline-block;position: absolute;top: 0;right: 0;">
+                                        <div style="position:relative;right:0;height: 15px;width:25px;">
+                                            <b>&nbsp;&nbsp;&nbsp;&nbsp;2</b>
+                                        </div>
+                                        <a href="cart/"><img src="{% static 'images/cart1.png' %}" class="img-responsive" alt="Food"></a></li>
+                                {% else %}
+                                <li style="display:inline-block;position: relative;top: 10px;left: 0;"><a href="user/register"><b>Signup</b></a> &nbsp;&nbsp;</li>
+                                <li style="display:inline-block;position: relative;top: 10px;right: 100;"><a href="user/login"> <b>Login</b></a></li>
+                                {%endif%}
+                                
+                            </ul>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="section-header">
+                                        {% block content %}
+                                        {% endblock %}
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% block menulist %}
+                {% endblock %}
+
+            </div> 
+        </section>
+
+        <!--== 13. Menu List ==-->
+        <section id="menu-list" class="menu-list">
+            <div class="container">
+                <div class="row menu">
+                    <div class="col-md-10 col-md-offset-1 col-sm-9 col-sm-offset-2 col-xs-12">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="row">
+                                    <div class="menu-catagory">
+                                        <h2>Bread</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">French Bread</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$149.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Italian Bread</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$149.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Regular Bread</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$149.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="row">
+                                    <div class="menu-catagory">
+                                        <h2>Drinks</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Regular Tea</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$20.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Garlic Tea</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$30.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Black Coffee</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$40.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="row">
+                                    <div class="menu-catagory">
+                                        <h2>Meat</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Bacon</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$70.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Sausage</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$50.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Chicken Balls</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$90.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="row">
+                                    <div class="menu-catagory">
+                                        <h2>Special</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Chicken Balls</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$90.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Bacon</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$70.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="menu-item">
+                                        <h3 class="menu-title">Sausage</h3>
+                                        <p class="menu-about">Astronomy compels the soul</p>
+
+                                        <div class="menu-system">
+                                            <div class="half">
+                                                <p class="per-head">
+                                                    <span><i class="fa fa-user"></i></span>1:1
+                                                </p>
+                                            </div>
+                                            <div class="half">
+                                                <p class="price">$50.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="moreMenuContent"></div>
+                        <div class="text-center">
+                            <a id="loadMenuContent" class="btn btn-middle hidden-sm hidden-xs">Load More <span class="caret"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="copyright text-center">
+                            <p>
+                                &copy; Copyright, 2020 <a href="#">Your Website Link.</a> Theme by <a href="http://github.com/neeraj879"  target="_blank">Neeraj</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.mixitup.min.js' %}" ></script>
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <script src="{% static 'js/jquery.validate.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.hoverdir.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jQuery.scrollSpeed.js' %}"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+        
+
+    </body>
+</html>
